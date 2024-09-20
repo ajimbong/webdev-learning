@@ -94,6 +94,10 @@ nav > div.links {
     align-items: start;
 }
 
+nav > div.hamburger {
+    display: none;
+}
+
 nav ul {
     display: flex;
     align-items: center;
@@ -107,13 +111,12 @@ header .container {
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
     align-items: center;
-    position: relative;
 }
 
 header .content {
     height: 100%;
     display: grid;
-    grid-template-rows: 20fr 1fr;
+    grid-template-rows: 15fr 1fr;
 }
 
 header .content div:first-child {
@@ -127,14 +130,87 @@ header p {
 
 header .clients {
     width: 100%;
+    align-self: end;
+}
+
+header .clients .clients-wrapper{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    left: 0%;
-    bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    nav {
+        justify-content: space-between;
+        align-items: top;
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 0rem;
+        align-items: top;
+    }
+
+    nav > div.links {
+        display: none;
+    }
+
+    nav > div.hamburger {
+        display: block;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    nav .hamburger img {
+        display: inline-block;
+    }
+
+    header .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    header .hero-image {
+        order: -1;
+    }
+
+    header .content {
+        padding-inline: 1rem;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    header .content > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header p {
+        margin-block: 1.5rem;
+        line-height: 1.3;
+    }
+
+    header .clients .clients-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .clients img {
+        transform: scale(0.7);
+    }
 }
 
